@@ -8,13 +8,21 @@ all: pipe_lat pipe_thr \
 	udp_lat
 
 run:
+	@echo "========= start testing ========="
 	./pipe_lat 100 10000
+	@echo
 	./unix_lat 100 10000
+	@echo
 	./tcp_lat 100 10000
+	@echo
 	./udp_lat 100 10000
+	@echo
 	./pipe_thr 100 10000
+	@echo
 	./unix_thr 100 10000
+	@echo
 	./tcp_thr 100 10000
+	@echo "========= finish testing ========="
 
 clean:
 	rm -f *~ core
